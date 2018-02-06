@@ -1,0 +1,11 @@
+commit 360504a04ecf112ac285e423ac2922099776be74
+Author: Yauheni <ergersusha2@gmail.com>
+Date:   Tue Feb 6 15:08:36 2018 +0300
+
+    add status.txt
+
+commit 6cd257d223823c2728d00f94a4652f6577c6504a
+Author: Yauheni <ergersusha2@gmail.com>
+Date:   Tue Feb 6 15:06:38 2018 +0300
+
+    add .gitignore

@@ -1,0 +1,186 @@
+html *
+{
+	font-family: HelveticaNeueCyr !important;
+}
+
+html, body {
+	background-color: #E0E0E0;
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #333339;
+	overflow: auto;
+}
+
+.user_text {
+	color: white;
+	float: left;
+	left: 10px;
+	margin-left: 50px;
+	margin-top: 26px;
+}
+
+#logo {
+	margin-top: 0;
+	margin-left: 28%;
+	width: 280px;
+	height: auto;
+}
+
+#log_out {
+	width: 35px;
+	height: 35px;
+	float:right;
+	margin: 20px 15px 10px 0;
+}
+
+.btns_cell {
+	width: 40%;
+	height: 20%;
+}
+
+.main_content {
+	margin: 6% auto 4% auto;
+}
+
+.table {
+	margin-top: 3%; 
+	margin-left: 15%;  
+	padding-bottom: 3%;
+	width: 50%;
+	table-layout: fixed;
+}
+
+.add_filter {
+	display: block;
+	width: 100%;
+	height: 105px;
+	left: 0;
+	background-color: silver;
+}
+
+#add {
+	margin-left: 3%;
+	height: 98%;
+	width: auto;
+}
+
+.inputs {
+	clear: right;
+	float: right;
+}
+
+.input {
+	width: 60%;
+	height: auto;
+	background-color: #F8B003;
+	margin-right: 100px;
+}
+
+.vl {
+	border-left: 3px solid black;
+	height: 105px;
+	position: absolute;
+	left: 15%;
+}
+
+.btn_like {
+	float: left;
+	outline:none; 
+	background-color: pink;
+	width: 75px;
+	height: 75px;
+	padding-top: 20px;
+	border-radius: 100%;
+	border-width: 1px;
+	margin-right: 10%;
+}
+
+#users_photo {
+	margin-left: 10%;
+	width: 150%;
+	height: auto;
+}
+
+#edit_delete {
+	height: 26%;
+	width: auto;
+}
+
+#like {
+	height: 80%;
+	width: 80%;
+	padding-bottom: 10px;
+}
+
+.load_more {
+	position: relative;
+	display: block;
+	margin: 60px auto 20px auto;
+	padding: 0;
+	outline: none;
+	border-width: 1px;
+	border-radius: 10px;
+	width: 120px;
+	height: 40px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+	background-color: #2ecc71;
+	color: #ffffff;
+}
+
+.footer {
+	bottom: 0px;
+	width: 100%;
+	background-color: #333333;
+	left: 0px;
+	overflow: auto;
+}
+
+.creator_text {
+	display: inline-block;
+	position: absolute;
+	color: white;
+	left: 20px;
+	width: 30%;
+	margin-top: 10px;
+}
+
+.course_group {
+	display: inline-block;
+	position: absolute;
+	color: white;
+	left: 20px;
+	margin-top: 35px;
+	width: 30%;
+}
+
+#logo_footer {
+	display: inline-block;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 42%;
+	width: 200px;
+	height: auto;
+}
+
+.mail {
+	display: inline-block;
+	position: absolute;
+	color: white;
+	right: 20px;
+	margin-top: 10px;
+}
+
+.last_changes {
+	display: inline-block;
+	position: absolute;
+	color: white;
+	right: 20px;
+	margin-top: 35px;
+}

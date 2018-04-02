@@ -4,24 +4,25 @@ html *
 }
 
 html, body {
+	min-width: 700px;
 	background-color: #E0E0E0;
 	margin: 0;
 	padding: 0;
 }
 
 ::selection {
-  background: #C0C0C0;
+  background: #1000FF;
 }
 
 .header {
 	top: 0;
 	left: 0;
 	width: 100%;
-	background-color: #333339;
+	background-color: #383838;
 	overflow: auto;
 }
 
-.user-text {
+#user-text {
 	color: white;
 	float: left;
 	left: 10px;
@@ -30,9 +31,8 @@ html, body {
 }
 
 #logo {
-	margin-top: 0;
 	margin-left: 28%;
-	width: 280px;
+	width: 260px;
 	height: auto;
 }
 
@@ -40,7 +40,7 @@ html, body {
 	width: 35px;
 	height: 35px;
 	float:right;
-	margin: 20px 15px 10px 0;
+	margin: 16px 15px 10px 0;
 }
 
 .btns-cell {
@@ -74,6 +74,12 @@ html, body {
 	width: auto;
 }
 
+#select {
+	float: right; 
+	margin-top: 2.5%;
+	width: 150%;
+}
+
 .inputs {
 	clear: right;
 	float: right;
@@ -84,6 +90,10 @@ html, body {
 	height: auto;
 	background-color: #F8B003;
 	margin-right: 100px;
+}
+
+.menu {
+	width: 160%;
 }
 
 .vl {
@@ -122,7 +132,7 @@ html, body {
 	padding-bottom: 10px;
 }
 
-.load-more {
+#load-more {
 	position: relative;
 	display: block;
 	margin: 60px auto 20px auto;
@@ -137,11 +147,11 @@ html, body {
 	color: #ffffff;
 }
 
-.footer {
-	bottom: 0px;
-	width: 100%;
-	background-color: #333333;
-	left: 0px;
+#footer {
+	display: flex;
+	flex-direction: column;
+	min-height: 60px;
+	background-color: #383838;
 	overflow: auto;
 }
 

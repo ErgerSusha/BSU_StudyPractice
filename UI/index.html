@@ -5,48 +5,46 @@
 	<title>PhoToYou</title>
 </head>
 <body>
-	<script src="script.js"></script>
 	<div class="header">
-		<p class="user-text">Пользователь А</p>
-		<a href="file:///C:/Study/UP/UI/index.html">
+		<p id="user-text"></p>
+		<a href="#">
 			<img id="logo" src="img/logo.png" alt="Logo"/>
 		</a>
 		<a href="#log-out">
-			<img id="log-out" src="img/log_out.png" alt="Log out"/>
+			<img id="log-out" src="img/log_in.png" alt="Log out"/>
 		</a>
 	</div>
-	
 	
 	<div class="add-filter">
 		<a href="#add">
-			<img id="add" src="img/add.png" alt="add" style="float: left;">
+			<img id="add" src="img/add.png">
 		</a>
-		<div class="vl"></div>
 		<div style="width: 80%; height: 5%; float: right;">
-			<table style="float: right; margin-top: 2.3%;">
+			<table style="margin-top: 2.3%;">
 				<tr>
-					<th><input class="input" type="text" size="27"></th>
-					<th><input class="input" type="text" size="27"></th>
-					<th><input class="input" type="text" size="27"></th>
-				</tr>
-				<tr>
-					<td><input type="radio"> По имени автора</td>
-					<td><input type="radio"> По дате</td>
-					<td><input type="radio"> По хештегам</td>
-				</tr>
-			</table>
-		</div>
+					<th><input class="input" type="text" size="26" placeholder="Введите имя автора"></th>
+					<th><input class="input" type="text" size="26" placeholder="Введите дату"></th>
+					<th>
+						<select id="mySelect" class="input" style="width: 72%;">
+						<option disabled selected value>Выберите хештег</option>
+						</select>
+					</th>
+			</tr>
+			<tr>
+				<td><input type="checkbox"> По имени автора</td>
+				<td><input type="checkbox"> По дате</td>
+				<td><input type="checkbox"> По хештегам</td>
+			</tr>
+		</table>
 	</div>
+</div>
 
-
-	<!-- REPEATING CODE FROM UP HERE -->
-
-
+<template id="post-template">
 	<div class="main-content"> 
 		<table class="table">
 			<tr>
 				<td class="btns-cell">
-					<a href="#edit-delete">
+					<a id="edit-button" href="#edit-delete">
 						<img id="edit-delete" src="img/edit_delete.png" alt="Delete or Edit"/>
 					</a>
 					<button class="btn-like">
@@ -57,265 +55,37 @@
 					<img id="users-photo" src="img/users_photo.png" alt="User's Photo"/>
 				</td>
 			</tr><tr>
-				<td><b>Автор:</b> Пользователь А</td>
+				<td id="author"> </td>
 			</tr><tr>
-				<td><b>Дата:</b> 25.02.2018</td>
+				<td id="createdAt"> </td>
 			</tr><tr>
-				<td><b>Описание:</b> Лампочка и кружочек</td>
+				<td id="description"> </td>
 			</tr><tr>
-				<td><b>Теги:</b> #лампочка</td>
+				<td id="hashtags"> </td>
 			</tr>
 		</table>
-	</div>
-
 	<hr width="90%">
-
-	<div class="main-content"> 
-		<table class="table">
-			<tr>
-				<td class="btns-cell">
-					<button class="btn-like">
-						<img id="like" src="img/like.png" alt="Like"/>
-					</button>
-				</td>
-				<td rowspan="5">
-					<img id="users-photo" src="img/other_photo.png" alt="User's Photo"/>
-				</td>
-			</tr><tr>
-				<td><b>Автор:</b> Пользователь X</td>
-			</tr><tr>
-				<td><b>Дата:</b> 25.02.2018</td>
-			</tr><tr>
-				<td><b>Описание:</b> Лампочка и овал</td>
-			</tr><tr>
-				<td><b>Теги:</b> #лампочка</td>
-			</tr>
-		</table>
 	</div>
+</template>
 
-	<hr width="90%">
+<div id="posts-container">	</div>
 
-	<div class="main-content"> 
-		<table class="table">
-			<tr>
-				<td class="btns-cell">
-					<a href="#edit-delete">
-						<img id="edit-delete" src="img/edit_delete.png" alt="Delete or Edit"/>
-					</a>
-					<button class="btn-like">
-						<img id="like" src="img/like.png" alt="Like"/>
-					</button>
-				</td>
-				<td rowspan="5">
-					<img id="users-photo" src="img/users_photo.png" alt="User's Photo"/>
-				</td>
-			</tr><tr>
-				<td><b>Автор:</b> Пользователь А</td>
-			</tr><tr>
-				<td><b>Дата:</b> 25.02.2018</td>
-			</tr><tr>
-				<td><b>Описание:</b> Лампочка и кружочек</td>
-			</tr><tr>
-				<td><b>Теги:</b> #лампочка</td>
-			</tr>
-		</table>
-	</div>
+<div id="last-element">
+	<button id="load-more" type="button" style="font-size: 100%">Load more</button>
+</div>
 
-	<hr width="90%">
+<div id="footer">
+	<p class="creator-text">Евгений Суша ©</p>
+	<p class="course-group">2 курс 12 группа</p>
+	<a href="#">
+		<img id="logo-footer" src="img/logo.png" alt="Logo"/>
+	</a>
+	<p class="mail">ergersusha2@gmail.com</p>
+	<p class="last-changes">25.02.2018</p>
+</div>
 
-	<div class="main-content"> 
-		<table class="table">
-			<tr>
-				<td class="btns-cell">
-					<button class="btn-like">
-						<img id="like" src="img/like.png" alt="Like"/>
-					</button>
-				</td>
-				<td rowspan="5">
-					<img id="users-photo" src="img/other_photo.png" alt="User's Photo"/>
-				</td>
-			</tr><tr>
-				<td><b>Автор:</b> Пользователь X</td>
-			</tr><tr>
-				<td><b>Дата:</b> 25.02.2018</td>
-			</tr><tr>
-				<td><b>Описание:</b> Лампочка и овал</td>
-			</tr><tr>
-				<td><b>Теги:</b> #лампочка</td>
-			</tr>
-		</table>
-	</div>
+<script src="script.js"></script>
+<script src="dom.js"></script>
 
-	<hr width="90%">
-
-	<div class="main-content"> 
-		<table class="table">
-			<tr>
-				<td class="btns-cell">
-					<a href="#edit-delete">
-						<img id="edit-delete" src="img/edit_delete.png" alt="Delete or Edit"/>
-					</a>
-					<button class="btn-like">
-						<img id="like" src="img/like.png" alt="Like"/>
-					</button>
-				</td>
-				<td rowspan="5">
-					<img id="users-photo" src="img/users_photo.png" alt="User's Photo"/>
-				</td>
-			</tr><tr>
-				<td><b>Автор:</b> Пользователь А</td>
-			</tr><tr>
-				<td><b>Дата:</b> 25.02.2018</td>
-			</tr><tr>
-				<td><b>Описание:</b> Лампочка и овал</td>
-			</tr><tr>
-				<td><b>Теги:</b> #лампочка</td>
-			</tr>
-		</table>
-	</div>
-
-	<hr width="90%">
-
-	<div class="main-content"> 
-		<table class="table">
-			<tr>
-				<td class="btns-cell">
-					<button class="btn-like">
-						<img id="like" src="img/like.png" alt="Like"/>
-					</button>
-				</td>
-				<td rowspan="5">
-					<img id="users-photo" src="img/other_photo.png" alt="User's Photo"/>
-				</td>
-			</tr><tr>
-				<td><b>Автор:</b> Пользователь X</td>
-			</tr><tr>
-				<td><b>Дата:</b> 25.02.2018</td>
-			</tr><tr>
-				<td><b>Описание:</b> Лампочка и овал</td>
-			</tr><tr>
-				<td><b>Теги:</b> #лампочка</td>
-			</tr>
-		</table>
-	</div>
-
-	<hr width="90%">
-
-	<div class="main-content"> 
-		<table class="table">
-			<tr>
-				<td class="btns-cell">
-					<button class="btn-like">
-						<img id="like" src="img/like.png" alt="Like"/>
-					</button>
-				</td>
-				<td rowspan="5">
-					<img id="users-photo" src="img/users_photo.png" alt="User's Photo"/>
-				</td>
-			</tr><tr>
-				<td><b>Автор:</b> Пользователь А</td>
-			</tr><tr>
-				<td><b>Дата:</b> 25.02.2018</td>
-			</tr><tr>
-				<td><b>Описание:</b> Лампочка и кружочек</td>
-			</tr><tr>
-				<td><b>Теги:</b> #лампочка</td>
-			</tr>
-		</table>
-	</div>
-
-	<hr width="90%">
-
-	<div class="main-content"> 
-		<table class="table">
-			<tr>
-				<td class="btns-cell">
-					<button class="btn-like">
-						<img id="like" src="img/like.png" alt="Like"/>
-					</button>
-				</td>
-				<td rowspan="5">
-					<img id="users-photo" src="img/other_photo.png" alt="User's Photo"/>
-				</td>
-			</tr><tr>
-				<td><b>Автор:</b> Пользователь X</td>
-			</tr><tr>
-				<td><b>Дата:</b> 25.02.2018</td>
-			</tr><tr>
-				<td><b>Описание:</b> Лампочка и овал</td>
-			</tr><tr>
-				<td><b>Теги:</b> #лампочка</td>
-			</tr>
-		</table>
-	</div>
-
-	<hr width="90%">
-
-	<div class="main-content"> 
-		<table class="table">
-			<tr>
-				<td class="btns-cell">
-					<a href="#edit-delete">
-						<img id="edit-delete" src="img/edit_delete.png" alt="Delete or Edit"/>
-					</a>
-					<button class="btn-like">
-						<img id="like" src="img/like.png" alt="Like"/>
-					</button>
-				</td>
-				<td rowspan="5">
-					<img id="users-photo" src="img/users_photo.png" alt="User's Photo"/>
-				</td>
-			</tr><tr>
-				<td><b>Автор:</b> Пользователь А</td>
-			</tr><tr>
-				<td><b>Дата:</b> 25.02.2018</td>
-			</tr><tr>
-				<td><b>Описание:</b> Лампочка и кружочек</td>
-			</tr><tr>
-				<td><b>Теги:</b> #лампочка</td>
-			</tr>
-		</table>
-	</div>
-
-	<hr width="90%">
-
-	<div class="main-content"> 
-		<table class="table">
-			<tr>
-				<td class="btns-cell">
-					<button class="btn-like">
-						<img id="like" src="img/like.png" alt="Like"/>
-					</button>
-				</td>
-				<td rowspan="5">
-					<img id="users-photo" src="img/other_photo.png" alt="User's Photo"/>
-				</td>
-			</tr><tr>
-				<td><b>Автор:</b> Пользователь X</td>
-			</tr><tr>
-				<td><b>Дата:</b> 25.02.2018</td>
-			</tr><tr>
-				<td><b>Описание:</b> Лампочка и овал</td>
-			</tr><tr>
-				<td><b>Теги:</b> #лампочка</td>
-			</tr>
-		</table>
-	</div>
-
-
-	<!-- TILL HERE -->
-
-
-	<button class="load-more" type="button" style="font-size: 120%">Load more</button>
-
-	<div class="footer">
-		<p class="creator-text">Евгений Суша ©</p>
-		<p class="course-group">2 курс 12 группа</p>
-		<a href="file:///C:/Study/UP/UI/index.html">
-			<img id="logo-footer" src="img/logo.png" alt="Logo"/>
-		</a>
-		<p class="mail">ergersusha2@gmail.com</p>
-		<p class="last-changes">25.02.2018</p>
-	</div>
 </body>
 </html>

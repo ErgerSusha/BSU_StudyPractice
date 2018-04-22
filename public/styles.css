@@ -37,10 +37,10 @@ html, body {
 }
 
 #log-out {
-	width: 35px;
-	height: 35px;
+	width: 41px;
+	height: 41px;
 	float:right;
-	margin: 16px 15px 10px 0;
+	margin: 16px 20px 10px 0;
 }
 
 .btns-cell {
@@ -159,12 +159,19 @@ label {
     vertical-align:middle;
 }
 #login {
-    margin-top: 12%;
-    margin-bottom: 12%;
+    margin-top: 13%;
+    margin-bottom: 14%;
     margin-left: 32%;
     margin-right: auto;
 }
-#authorisation-inputs {
+
+#login-input {
+	margin-bottom:15px;
+    font-size: 40px;
+	margin-left: 19px;
+}
+
+#password-input {
     margin-bottom:15px;
     font-size: 40px;
 }

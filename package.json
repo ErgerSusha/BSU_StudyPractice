@@ -1,0 +1,19 @@
+{
+  "name": "bsustudypractice",
+  "version": "1.0.0",
+  "description": "package file for photoposts website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErgerSusha/BSU_StudyPractice.git"
+  },
+  "author": "ErgerSusha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ErgerSusha/BSU_StudyPractice/issues"
+  },
+  "homepage": "https://github.com/ErgerSusha/BSU_StudyPractice#readme"
+}

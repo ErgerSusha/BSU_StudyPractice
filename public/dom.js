@@ -4,19 +4,16 @@ const postsContainer = document.getElementById("posts-container");
 return {
 	showUserElements : function() {
 		let logInOrOut = document.getElementById("log-out");
-		let addButton = document.getElementById("add");
 		if (document.getElementById('user-text').innerHTML === "") {
 			logInOrOut.src="img/log_in.png";
-			if (addButton !== null) {
-				addButton.style.visibility = 'hidden';
-			}
+			document.getElementById("add-button").style.visibility = 'hidden';
 		}
 		else {
 			logInOrOut.alt = "Log out";
-			logInOrOut.src="img/log_out.png";
+			logInOrOut.src = "img/log_out.png";
 		}
-		let select = document.getElementById("mySelect");
-		/*let recentPosts = mainScript.getPhotoPosts(0, 20);
+		/*let select = document.getElementById("mySelect");
+		let recentPosts = mainScript.getPhotoPosts(0, 20);
 		for (i = 0; i < recentPosts.length; i++) {
 			let option = document.createElement("option");
 			option.text = recentPosts[i].hashtags;
@@ -96,7 +93,7 @@ var user = 'Susha Yauheni';
 document.getElementById('user-text').innerHTML = user;
 DOM.showUserElements();
 DOM.showRecentPosts();
-DOM.addPost(myPost);
-/*DOM.removePost(3);
+/*DOM.addPost(myPost);
+DOM.removePost(3);
 DOM.editPost('1', {description:'THIS POST WAS EDITED', photoLink:'https://maxcdn.icons8.com/app/uploads/2016/10/edit2.png'});
 */

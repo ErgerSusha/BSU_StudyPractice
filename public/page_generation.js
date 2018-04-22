@@ -6,7 +6,27 @@
 */
 
 var CURRENT_STATE;
+var postsLoaded = 10;
 const postsContainer = document.getElementById("posts-container");
+
+var users = [{
+        name: 'Administrator',
+        login: 'admin',
+        password: 'admin',
+    },
+
+    {
+        name: 'Yauheni',
+        login: 'erger',
+        password: '123',
+    },
+
+    {
+        name: 'NonYauheni',
+        login: 'nonyauheni',
+        password: '456',
+    }
+];
 
 function deletePhotoPostElement(ID) {
 	let postToRemove = document.getElementById(ID);
@@ -48,7 +68,15 @@ function logInOrOut() {
 		else {
 			document.getElementById('user-text').innerHTML = "";
 			document.getElementById("log-out").alt = "Log in";	
-			DOM.showUserElements();
+			let logInOrOut = document.getElementById("log-out");
+			if (document.getElementById('user-text').innerHTML === "") {
+				logInOrOut.src="img/log_in.png";
+				document.getElementById("add-button").style.visibility = 'hidden';
+			}
+			else {
+				logInOrOut.alt = "Log out";
+				logInOrOut.src="img/log_out.png";
+			}
 			$("a[id=edit-button]").remove();
 			$("a[id=delete-button]").remove();
 		}
@@ -64,5 +92,31 @@ function clearMainPage() {
 	}
 	if (document.getElementById("add-filter") !== null) {
 		document.getElementById("add-filter").style.display = 'none';
+	}
+}
+
+function loadMore() {
+	let posts = mainScript.getPhotoPosts(postsLoaded, 10);
+	posts.forEach(post => DOM.addPhotoPosts(post));
+	postsLoaded += 10;
+}
+
+function tryLogIn() {
+	if (document.getElementById("login-input").value !== null && 
+		document.getElementById("password-input").value !== null) {
+		var login = document.getElementById("login-input").value;
+		var password = document.getElementById("password-input").value;
+		for (var i = 0; i < 3; i++) {
+			if (users[i].login === login && users[i].password === password) {
+				returnToMainPage();
+				document.getElementById('user-text').innerHTML = users[i].name;
+				document.getElementById("log-out").alt = "Log Out";
+				document.getElementById("log-out").src = "img/log_out.png";
+				document.getElementById("add-button").style.visibility = 'visible';
+				CURRENT_STATE = 0;
+				return;
+			}
+		}
+		alert("Неверный логин или пароль");	
 	}
 }

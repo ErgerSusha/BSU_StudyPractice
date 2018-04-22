@@ -40,7 +40,7 @@ var mainScript = (function() {
             id: '5',
             description: 'Описание',
             createdAt: new Date('2004-02-23T23:00:00'),
-            author: 'Иванов Иван',
+            author: 'Susha Yauheni',
             photoLink: 'http://azov-off-road.com.ua/wp-content/uploads/2016/05/GAZ-69-9.jpg',
             hashtags: '#хештеги'
         },
@@ -76,7 +76,7 @@ var mainScript = (function() {
             id: '9',
             description: 'Описание',
             createdAt: new Date('2018-08-09T23:00:00'),
-            author: 'Иванов Иван',
+            author: 'Susha Yauheni',
             photoLink: 'https://static-eu.insales.ru/images/products/1/5315/73118915/e5f4685ef69a22816d06098947ba1138_1_.jpg',
             hashtags: '#хештеги'
         },
@@ -121,7 +121,7 @@ var mainScript = (function() {
             id: '14',
             description: 'Описание',
             createdAt: new Date('2018-01-23T23:00:00'),
-            author: 'Иванов Иван',
+            author: 'Susha Yauheni',
             photoLink: 'http://ingopneus.com.br/blog/wp-content/uploads/2017/01/ingo-pneus-4x4-rodas-1.jpg',
             hashtags: '#хештеги'
         },

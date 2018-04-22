@@ -16,7 +16,7 @@
 </div>
 
 <div id="add-filter">
-	<a href="#add">
+	<a id="add-button" href="#add">
 		<img id="add" src="img/add.png">
 	</a>
 	<div style="width: 80%; height: 5%; float: right;">
@@ -47,12 +47,12 @@
 			<label id="form-name">- Авторизация -</label>
 			<br><br><br><br><br>
 			<label class="inputs-names">Логин:</label>
-			<input id="authorisation-inputs" style="margin-left: 19px;" type="text" size="20" maxlength="20" />
+			<input id="login-input" type="text" size="20" maxlength="20" />
 			<br/>
 			<label class="inputs-names">Пароль:</label>
-			<input id="authorisation-inputs" type="password" size="20" maxlength="10" />
+			<input id="password-input" type="password" size="20" maxlength="10" />
 			<br/>
-			<input id="submit-button" type="submit" value="Войти"/>
+			<input id="submit-button" onclick="tryLogIn()" type="submit" value="Войти"/>
 		</form>
 	</div>
 </template>
@@ -120,7 +120,7 @@
 <div id="posts-container">	</div>
 
 <div id="last-element">
-	<button id="load-more" type="button" style="font-size: 100%">Load more</button>
+	<button id="load-more" onclick="loadMore()" type="button" style="font-size: 100%">Load more</button>
 </div>
 <div id="footer">
 	<p class="creator-text">Евгений Суша ©</p>

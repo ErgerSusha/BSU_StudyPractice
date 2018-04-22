@@ -1,32 +1,30 @@
 ; var DOM = (function()  {
-//var user = null;
-var user = 'Susha Yauheni';
-const sd = document.getElementById("posts-container");
+const postsContainer = document.getElementById("posts-container");
 
 return {
 	showUserElements : function() {
-		let userName = document.getElementById('user-text');
 		let logInOrOut = document.getElementById("log-out");
 		let addButton = document.getElementById("add");
-		if (user === null) {
-			userName.innerHTML = "";
+		if (document.getElementById('user-text').innerHTML === "") {
 			logInOrOut.src="img/log_in.png";
-			addButton.style.visibility = 'hidden';
+			if (addButton !== null) {
+				addButton.style.visibility = 'hidden';
+			}
 		}
 		else {
+			logInOrOut.alt = "Log out";
 			logInOrOut.src="img/log_out.png";
-			userName.innerHTML = user;
 		}
 		let select = document.getElementById("mySelect");
-		let recentPosts = mainScript.getPhotoPosts(0, 20);
+		/*let recentPosts = mainScript.getPhotoPosts(0, 20);
 		for (i = 0; i < recentPosts.length; i++) {
 			let option = document.createElement("option");
 			option.text = recentPosts[i].hashtags;
 			select.add(option);
-		}
+		} */
 	},
 
-	addPhotoPostTo : function(photoPost) {
+	addPhotoPosts : function(photoPost) {
 		if (document.getElementById(photoPost.id) !== null) {
 			return;
 		}
@@ -37,22 +35,23 @@ return {
 		newPost.getElementById('users-photo').src = photoPost.photoLink;
 		newPost.getElementById('author').innerHTML = "Автор: " + photoPost.author;
 		newPost.getElementById('hashtags').innerHTML = "Хештеги: " + photoPost.hashtags;
-		newPost.getElementById('createdAt').innerHTML = "Дата: " + photoPost.createdAt.getDate() + "."
-		+ (photoPost.createdAt.getMonth() + 1) + "." + photoPost.createdAt.getFullYear();
-		if (user !== photoPost.author) {
+		newPost.getElementById('createdAt').innerHTML = "Дата: " + ('0' + photoPost.createdAt.getDate()).slice(-2) + "."
+		+ ('0' + (photoPost.createdAt.getMonth() + 1)).slice(-2) + "." + photoPost.createdAt.getFullYear();
+		if (document.getElementById('user-text').innerHTML !== photoPost.author) {
 			newPost.getElementById('edit-button').parentNode.removeChild(newPost.getElementById('edit-button'));
+			newPost.getElementById('delete-button').parentNode.removeChild(newPost.getElementById('delete-button'));
 		}
-		sd.appendChild(newPost);
+		postsContainer.appendChild(newPost);
 	},
 
 	showRecentPosts: function () {
 		let recentPosts = mainScript.getPhotoPosts(0, 10);
-		recentPosts.forEach(post => this.addPhotoPostTo(post));
+		recentPosts.forEach(post => this.addPhotoPosts(post));
 	},
 
 	addPost: function (photoPost) {
 		if (mainScript.addPhotoPost(photoPost)) {
-			this.addPhotoPostTo(photoPost);
+			this.addPhotoPosts(photoPost);
 		}
 	},
 
@@ -60,7 +59,7 @@ return {
 		mainScript.removePhotoPost(id);
 		postToRemove = document.getElementById(id);
 		if (postToRemove !== null)
-			sd.removeChild(postToRemove);
+			postsContainer.removeChild(postToRemove);
 	},
 
 	editPost: function (id, photoPost) {
@@ -68,14 +67,14 @@ return {
 			let post = document.getElementById(id);
 			if (post !== undefined) {
 				if (photoPost.description !== undefined) {
-					document.querySelector(`div[id = "${id}"] td[id= "description"]`).textContent =
+					document.querySelector(`div[id = "${id}"] td[id = "description"]`).textContent =
 					"Описание: " + photoPost.description;
-				}	
+				}
 				if (photoPost.photoLink !== undefined) {
-					document.querySelector(`div[id = "${id}"] img[id= "users-photo"]`).src = photoPost.photoLink;
+					document.querySelector(`div[id = "${id}"] img[id = "users-photo"]`).src = photoPost.photoLink;
 				}
 				if (photoPost.hashtags !== undefined) {
-					document.querySelector(`div[id = "${id}"] td[id= "hashtags"]`).textContent = 
+					document.querySelector(`div[id = "${id}"] td[id = "hashtags"]`).textContent = 
 					"Хештеги: " + photoPost.hashtags;
 				}
 			}
@@ -93,8 +92,11 @@ var myPost = {
 	hashtags: '#hastag'
 };
 
-DOM.showRecentPosts();
+var user = 'Susha Yauheni';
+document.getElementById('user-text').innerHTML = user;
 DOM.showUserElements();
+DOM.showRecentPosts();
 DOM.addPost(myPost);
-DOM.removePost(3);
+/*DOM.removePost(3);
 DOM.editPost('1', {description:'THIS POST WAS EDITED', photoLink:'https://maxcdn.icons8.com/app/uploads/2016/10/edit2.png'});
+*/

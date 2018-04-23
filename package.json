@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ErgerSusha/BSU_StudyPractice/issues"
   },
-  "homepage": "https://github.com/ErgerSusha/BSU_StudyPractice#readme"
+  "homepage": "https://github.com/ErgerSusha/BSU_StudyPractice#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }

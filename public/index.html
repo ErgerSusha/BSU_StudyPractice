@@ -16,14 +16,14 @@
 </div>
 
 <div id="add-filter">
-	<a id="add-button" href="#add">
+	<a id="add-button" href="#add" onclick="editPhotoPost(null)">
 		<img id="add" src="img/add.png">
 	</a>
 	<div style="width: 80%; height: 5%; float: right;">
 		<table style="margin-top: 2.3%;">
 			<tr>
-				<th><input class="input" type="text" size="26" placeholder="Введите имя автора"></th>
-				<th><input class="input" type="text" size="26" placeholder="Введите дату"></th>
+				<th><input id="authorFilter" class="input" type="text" size="26" placeholder="Введите имя автора"></th>
+				<th><input id="dateFilter" class="input" type="text" size="26" placeholder="Введите дату"></th>
 				<th>
 					<select id="mySelect" class="input" style="width: 72%;">
 						<option disabled selected value>Выберите хештег</option>
@@ -35,6 +35,7 @@
 				<td><input type="checkbox"> По дате</td>
 				<td><input type="checkbox"> По хештегам</td>
 			</tr>
+			<button id="filter-button">Фильтровать</button>
 			<vh>
 		</table>
 	</div>
@@ -80,7 +81,7 @@
 		</div>
 		<br><br><br>
 		<div>
-			<button id="save-btn">Сохранить</button>
+			<button id="save-btn" onclick="saveResults()">Сохранить</button>
 		</div>
 	</div>
 </template>
@@ -90,8 +91,8 @@
 		<table class="table">
 			<tr>
 				<td class="btns-cell">
-					<button class="btn-like">
-						<img id="like" src="img/like.png" alt="Like"/>
+					<button class="btn-like" onclick="likePressed(this)">
+						<img id="like" src="img/like.png" alt="NotLiked"/>
 					</button>
 					<a id="edit-button" href="#edit-delete" onclick="editPhotoPost(this.parentNode.parentNode.parentNode.parentNode.parentNode.id)">
 						<img id="edit-delete" src="img/edit.png" alt="Delete or Edit"/>
@@ -113,7 +114,7 @@
 				<td id="hashtags"> </td>
 			</tr>
 		</table>
-		<hr width="90%">
+		<hr width="80%">
 	</div>
 </template>
 
